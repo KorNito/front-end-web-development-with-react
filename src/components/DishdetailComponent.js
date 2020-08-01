@@ -31,11 +31,7 @@ export class Dishdetail extends Component {
                 return(
                     <li key={comment.id}>
                         <p>{comment.comment}</p>
-                         <p>-- {comment.author}, {new Intl.DateTimeFormat('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: '2-digit'
-                        }).format(new Date(comment.date))}</p>
+                         <p>-- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
                     </li>
                 )
             })
@@ -64,8 +60,8 @@ export class Dishdetail extends Component {
 
         return(
             <div className="row">
-                {this.renderDish(this.props.dish)}
-                {this.renderComments(this.props.dish.comments)}
+                    {this.renderDish(this.props.dish)}
+                    {this.renderComments(this.props.dish.comments)}
             </div>
         )
     }
