@@ -52,18 +52,18 @@ export class Dishdetail extends Component {
     }
 
     render(){
-        if (this.props.dish == null) {
+        if (this.props.dish != null) {
+            return(
+                <div className="row">
+                        {this.renderDish(this.props.dish)}
+                        {this.renderComments(this.props.dish.comments)}
+                </div>
+            )
+        } else {
             return (
                 <div></div>
             )
         }
-
-        return(
-            <div className="row">
-                    {this.renderDish(this.props.dish)}
-                    {this.renderComments(this.props.dish.comments)}
-            </div>
-        )
     }
 }
 
