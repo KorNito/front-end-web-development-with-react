@@ -107,7 +107,7 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
         }
     }
 
-    function RenderComments({comments, dishId, postComment}){
+    function RenderComments({comments, dishId,}){
         if (comments != null) {
 
             const comment = comments.map(comment =>{
