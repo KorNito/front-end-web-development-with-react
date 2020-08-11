@@ -27,7 +27,7 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
     
         handleSubmit(values) {
             this.toggleModal();
-            this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+            this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
         }
 
         render() {
@@ -109,7 +109,7 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
         }
     }
 
-    function RenderComments({comments, addComment, dishId}){
+    function RenderComments({comments, postComment, dishId}){
         if (comments != null) {
 
             const comment = comments.map(comment =>{
@@ -127,7 +127,7 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
                   <ul className="list-unstyled">
                     {comment}
                   </ul>
-                  <CommentForm dishId={dishId} addComment={addComment}/>
+                  <CommentForm dishId={dishId} postComment={postComment}/>
               </div>
             )
         } else {
@@ -172,7 +172,7 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
                     <div className="row">
                         <RenderDish dish={props.dish}/>
                         <RenderComments comments={props.comments}
-                            addComment={props.addComment}
+                            postComment={props.postComment}
                             dishId={props.dish.id}/>
                     </div>
                 </div>
