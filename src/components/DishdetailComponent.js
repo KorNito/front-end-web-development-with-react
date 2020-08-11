@@ -118,10 +118,10 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
     function RenderComments({comments, postComment, dishId}){
         if (comments != null) {
             return (
-              <div className="col-12 col-md-5 m-1">
-                  <h4>Comments</h4>
-                  <ul className="list-unstyled">
-                  <Stagger in>
+                <div className="col-12 col-md-5 m-1">
+                    <h4>Comments</h4>
+                    <ul className="list-unstyled">
+                    <Stagger in>
                         {comments.map((comment) => {
                             return (
                                 <Fade in>
@@ -132,10 +132,10 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
                                 </Fade>
                             );
                         })}
-                        </Stagger>
-                  </ul>
-                  <CommentForm dishId={dishId} postComment={postComment}/>
-              </div>
+                    </Stagger>
+                    </ul>
+                    <CommentForm dishId={dishId} postComment={postComment}/>
+                </div>
             )
         } else {
             return (
